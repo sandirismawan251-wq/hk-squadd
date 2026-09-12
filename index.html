@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🅷🅺. Squad</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="with-image">
+  <header>
+    <!-- Nama HK dengan animasi + suara -->
+    <h1 class="hk-animated" onclick="animateHK(this)">🅷🅺. Squad</h1>
+    <p class="subtitle">Hilang Koneksi, tapi tetap Legend!</p>
+  </header>
+
+  <main>
+    <section class="members fade-in">
+      <h2>Anggota Squad</h2>
+      <div class="member-grid">
+        <div class="card" onclick="showImage('leader.jpg')"><h3>🅷🅺 • Zefin</h3></div>
+        <div class="card" onclick="showImage('fighter.jpg')"><h3>🅷🅺 • Warnerd</h3></div>
+        <div class="card" onclick="showImage('mage.jpg')"><h3>🅷🅺 • Nixie</h3></div>
+        <div class="card" onclick="showImage('marksman.jpg')"><h3>🅷🅺 • Xora</h3></div>
+        <div class="card" onclick="showImage('tank.jpg')"><h3>🅷🅺 • Aisay</h3></div>
+        <div class="card" onclick="showImage('assassin.jpg')"><h3>🅷🅺 • Fundul</h3></div>
+        <div class="card" onclick="showImage('support.jpg')"><h3>🅷🅺 • x</h3></div>
+        <div class="card" onclick="showImage('sniper.jpg')"><h3>🅷🅺 • x</h3></div>
+      </div>
+    </section>
+
+    <!-- Gambar muncul sesuai nama -->
+    <section id="image-section" class="hidden">
+      <img id="member-img" src="" alt="Anggota HK" class="popup-img">
+    </section>
+  </main>
+
+  <footer>
+    <p>Pokoknya Gas terus Sampe Gila</p>
+  </footer>
+
+  <!-- Audio (kamu bisa tempel file suara apapun) -->
+  <audio id="hk-sound" src="panik-gak-masa-enggak.mp3"></audio>
+
+  <script>
+    function animateHK(element) {
+      // Animasi klik
+      element.classList.add("clicked");
+      setTimeout(() => {
+        element.classList.remove("clicked");
+      }, 1000);
+
+      // Mainkan suara (file bebas, misalnya suara.mp3)
+      const sound = document.getElementById("hk-sound");
+      sound.currentTime = 0;
+      sound.play();
+    }
+
+    function showImage(filename) {
+      const img = document.getElementById("member-img");
+      img.src = filename; // tampilkan gambar sesuai file
+      document.getElementById("image-section").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
